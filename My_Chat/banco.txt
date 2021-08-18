@@ -1,0 +1,30 @@
+create database mychatsystem;
+
+create table users(
+	
+	id bigint auto_increment primary key,
+	userid bigint,
+	username varchar(50),
+	email varchar(100),
+	password varchar(64),
+	image varchar(),
+	data datetime(),
+	online int
+);
+
+
+use mychatsystem;
+
+create table messages
+(
+	id int auto_increment primary key,
+	sender bigint, //the userid of user that is sending the message
+	receiver bigint, //the userid of user that is received
+	message text,  //the text that is sending
+	files  text,  //the files that is sending
+	date datetime ,  //the date that was sended the message
+	seen int , //the date that was seen the message
+	received int ,  //the date that was received the message
+	deleted_sender tinyint 1,       //(true or false)
+	deleted_receiver tinyint 1 //(true or false)
+);
